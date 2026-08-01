@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spandan Podder | Electrical & Electronic Engineer Portfolio</title>
+    <meta name="description" content="E-Portfolio of Spandan Podder - EEE Undergraduate, Microelectronics Specialist & Circuit Design Enthusiast.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B0F19',
+                        royal: '#3B82F6',
+                        lightbg: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "YOUR_PUBLIC_KEY",
+            });
+        })();
+    </script>
+
+    <style>
+        /* Glassmorphism & custom utility styles */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .dark .glass {
+            background: rgba(11, 15, 25, 0.85);
+        }
+
+        /* Illuminating Background Starry / Constellation Cosmic Design */
+        .cosmic-bg {
+            background-color: #F8FAFC;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+                radial-gradient(#3B82F6 1px, transparent 1px),
+                radial-gradient(#9333EA 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 80px 80px;
+            background-position: 0 0, 0 0, 0 0, 0 0, 20px 20px;
+        }
+
+        .dark .cosmic-bg {
+            background-color: #0B0F19;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(139, 92, 246, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 50% 40%, rgba(236, 72, 153, 0.12) 0%, transparent 55%),
+                radial-gradient(rgba(255, 255, 255, 0.25) 1.5px, transparent 1.5px),
+                radial-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 50px 50px, 90px 90px;
+            background-position: 0 0, 0 0, 0 0, 0 0, 30px 30px;
+        }
+
+        /* Glowing floating orb animation */
+        @keyframes floatOrb {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+        .floating-orb {
+            animation: floatOrb 8s ease-in-out infinite;
+        }
+
+        /* Continuous slow rotation animation for outer ring */
+        @keyframes rotate-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .rotating-multicolor-ring {
+            background: conic-gradient(
+                from 0deg,
+                #ef4444, /* Red */
+                #3b82f6, /* Blue */
+                #eab308, /* Yellow */
+                #22c55e, /* Green */
+                #ef4444  /* Red */
+            );
+            animation: rotate-slow 12s linear infinite;
+        }
+
+        /* Live continuous flow animation for the fat ribbon */
+        @keyframes flow-ribbon {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .live-flow-ribbon {
+            background: linear-gradient(270deg, #ef4444, #3b82f6, #eab308, #22c55e, #a855f7, #ef4444);
+            background-size: 400% 400%;
+            animation: flow-ribbon 8s ease infinite;
+        }
+
+        /* Left-to-Right Moving Ticker Animation */
+        @keyframes marquee-ltr {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        .animate-marquee-ltr {
+            display: flex;
+            width: max-content;
+            animation: marquee-ltr 30s linear infinite;
+        }
+
+        .animate-marquee-ltr:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="cosmic-bg text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 relative overflow-x-hidden">
+
+    <!-- Ambient Floating Background Orbs -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none floating-orb"></div>
+    <div class="absolute top-[40%] right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none floating-orb" style="animation-delay: 3s;"></div>
+    <div class="absolute bottom-20 left-[30%] w-80 h-80 bg-pink-400/10 dark:bg-pink-600/10 rounded-full blur-3xl pointer-events-none floating-orb" style="animation-delay: 5s;"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-royal z-50 transition-all duration-150" style="width: 0%;"></div>
+
+    <!-- RIGHT-SIDEBAR AND SEPARATE ROUND ARROW BUTTONS BELOW IT -->
+    <div class="fixed right-2 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-2">
+        <aside aria-label="Section Navigation Sidebar" class="flex flex-col items-center gap-3 p-2 rounded-2xl glass border border-slate-200/80 dark:border-slate-800/80 shadow-xl">
+            <button id="sidebar-up" class="p-1.5 rounded-full hover:bg-royal hover:text-white transition-all text-slate-600 dark:text-slate-300" aria-label="Scroll Up">
+                <i data-lucide="chevron-up" class="w-4 h-4"></i>
+            </button>
+
+            <div id="section-bars-indicator" class="flex flex-col items-center justify-center gap-1.5 py-1 px-0.5 cursor-pointer" title="Active Section Indicator">
+                <span id="bar-line-1" class="w-4 h-0.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-colors duration-300"></span>
+                <span id="bar-line-2" class="w-3 h-0.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-colors duration-300"></span>
+                <span id="bar-line-3" class="w-4 h-0.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-colors duration-300"></span>
+            </div>
+
+            <button id="sidebar-down" class="p-1.5 rounded-full hover:bg-royal hover:text-white transition-all text-slate-600 dark:text-slate-300" aria-label="Scroll Down">
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+        </aside>
+
+        <div class="flex items-center gap-2 mt-1">
+            <button id="goto-top-btn" class="w-8 h-8 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 bg-blue-500" title="Go to Top of Website" aria-label="Go to Top">
+                <i data-lucide="arrow-up" class="w-4 h-4"></i>
+            </button>
+            <button id="goto-bottom-btn" class="w-8 h-8 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 bg-blue-500" title="Go to Bottom of Website" aria-label="Go to Bottom">
+                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- BLUE AI SMILE WELCOME & THANK YOU BAR -->
+    <div id="ai-smile-bar" class="fixed right-6 bottom-6 z-50 flex items-center bg-blue-600 text-white shadow-2xl rounded-full overflow-hidden border-2 border-blue-400 transition-all duration-700 ease-in-out max-w-[60px] opacity-95 hover:opacity-100" style="max-width: 60px;">
+        <div class="flex items-center justify-center min-w-[60px] h-[60px] bg-blue-600 cursor-pointer text-white" onclick="toggleAiSmileBar()">
+            <i data-lucide="smile" class="w-7 h-7 animate-pulse text-amber-300"></i>
+        </div>
+        <div id="ai-smile-content" class="whitespace-nowrap px-4 py-2 text-xs font-semibold tracking-wide overflow-hidden transition-all duration-700 max-w-0 opacity-0 flex items-center gap-2">
+            <span>👋 Welcome guest! Thank you for visiting! 😊</span>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 w-full glass border-b border-slate-200/60 dark:border-slate-800/60 transition-colors duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="text-xl font-bold tracking-tight text-navy dark:text-white flex items-center gap-2">
+                    <i data-lucide="cpu" class="text-royal"></i> SPANDAN PODDER
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+                    <a href="#home" class="hover:text-royal transition-colors">Home</a>
+                    <a href="#about" class="hover:text-royal transition-colors">About</a>
+                    <a href="#education" class="hover:text-royal transition-colors">Education</a>
+                    <a href="#skills" class="hover:text-royal transition-colors">Skills</a>
+                    <a href="#experience" class="hover:text-royal transition-colors">Experience</a>
+                    <a href="#projects" class="hover:text-royal transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-royal transition-colors">Achievements</a>
+                    <a href="#video" class="hover:text-royal transition-colors">Video</a>
+                    <a href="#resume" class="hover:text-royal transition-colors">Resume</a>
+                    <a href="#contact" class="hover:text-royal transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button id="cosmic-toggle" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-200/80 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-royal hover:text-white transition-all shadow-sm" title="Toggle Cosmic Lighting Intensity">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> <span id="toggle-label">Cosmic FX: On</span>
+                    </button>
+
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200/80 dark:hover:bg-slate-800/80 transition-colors" aria-label="Toggle Theme">
+                        <i data-lucide="sun" class="hidden dark:block w-5 h-5 text-amber-400"></i>
+                        <i data-lucide="moon" class="block dark:hidden w-5 h-5 text-slate-700"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-200 dark:border-slate-800 glass px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#home" class="block py-2 hover:text-royal">Home</a>
+            <a href="#about" class="block py-2 hover:text-royal">About</a>
+            <a href="#education" class="block py-2 hover:text-royal">Education</a>
+            <a href="#skills" class="block py-2 hover:text-royal">Skills</a>
+            <a href="#experience" class="block py-2 hover:text-royal">Experience</a>
+            <a href="#projects" class="block py-2 hover:text-royal">Projects</a>
+            <a href="#certifications" class="block py-2 hover:text-royal">Achievements</a>
+            <a href="#video" class="block py-2 hover:text-royal">Video</a>
+            <a href="#resume" class="block py-2 hover:text-royal">Resume</a>
+            <a href="#contact" class="block py-2 hover:text-royal">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="section-block relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-royal/10 border border-royal/20 text-royal text-xs font-semibold tracking-wide uppercase shadow-sm">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> EEE Undergraduate & Microelectronics Enthusiast
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-navy dark:text-white tracking-tight">
+                    Hi, I'm <span class="text-royal">Spandan Podder</span>
+                </h1>
+                <h2 class="text-xl sm:text-2xl font-semibold text-slate-600 dark:text-slate-300">
+                    Electrical and Electronic Engineering Undergraduate
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl text-base sm:text-lg leading-relaxed">
+                    Dedicated and driven EEE undergraduate with a strong academic foundation and hands-on experience in microelectronics, integrated circuit design, and automated test simulation. Eager to contribute practical knowledge in hardware testing, structural modeling, and circuit design.
+                </p>
+
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                    <a href="https://drive.google.com/file/d/1aceQvPcj8T8SFpeljDbvK-FXeTsQlsKV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-royal hover:bg-blue-700 text-white font-medium rounded-xl shadow-lg shadow-royal/25 transition-all flex items-center gap-2">
+                        <i data-lucide="download" class="w-4 h-4"></i> Download Resume
+                    </a>
+                    <button onclick="openModal('hireModal')" class="px-6 py-3 border border-slate-300 dark:border-slate-700 hover:border-royal text-slate-700 dark:text-slate-200 font-medium rounded-xl transition-all flex items-center gap-2 glass">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-royal"></i> Quick Contact Section
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="mailto:spandanpodder555@gmail.com" class="p-2.5 rounded-full glass border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-royal hover:text-white transition-all shadow-sm">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/17wwujHXaW/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full glass border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-royal hover:text-white transition-all shadow-sm" title="Facebook">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.instagram.com/spandan.podder17?igsh=MWhsdzR3YWxnb2hwdQ==" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full glass border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-royal hover:text-white transition-all shadow-sm" title="Instagram">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://github.com/ltspandanpodder755-spk" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full glass border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-royal hover:text-white transition-all shadow-sm" title="GitHub">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/+8801618893450" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full glass border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-royal hover:text-white transition-all shadow-sm" title="WhatsApp">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center items-center">
+                <div class="relative w-[22rem] h-[22rem] sm:w-[28rem] sm:h-[28rem] flex items-center justify-center">
+                    <div class="relative z-20 w-[90%] h-[90%] rounded-full overflow-hidden flex flex-col items-center justify-center text-center p-0">
+                        <img src="https://lh3.googleusercontent.com/d/1Jo9XwreADrTVta4-Jf1-csQNKC1pzcws=s1000" alt="Spandan Podder" class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-slate-400 hover:text-royal transition-colors">
+            <span class="text-xs font-medium mb-1">Scroll Down</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 animate-bounce"></i>
+        </a>
+    </section>
+
+    <!-- LIVE FLOW FAT RIBBON -->
+    <div class="w-full h-6 sm:h-8 live-flow-ribbon shadow-lg my-2"></div>
+
+    <!-- LEFT-TO-RIGHT MOVING ICONS TICKER SECTION -->
+    <section class="py-6 border-y border-slate-200/60 dark:border-slate-800/60 glass overflow-hidden">
+        <div class="flex overflow-hidden relative w-full mask-gradient">
+            <div class="animate-marquee-ltr flex items-center gap-8 whitespace-nowrap">
+                <!-- Item Set 1 -->
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="cpu" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Microelectronics Systems</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="hard-drive" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Microprocessors</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="circuit-board" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">AC/DC Circuit Analysis</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="activity" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">NI Multisim</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="layers" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Tinkercad Circuits</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="wrench" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">LTspice</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="layout" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Proteus Design Suite</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="code" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">C++</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="terminal" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Python</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="globe" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">HTML</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="file-code" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Java</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Design for Testability (DFT)</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="file-spreadsheet" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Microsoft Office Suite</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="cloud" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Google Workspace</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="palette" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Canva</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="users" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Leadership & Teamwork</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="lightbulb" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Creative Problem-Solving</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="clock" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Time Management</span>
+                </div>
+
+                <!-- Item Set 2 (Duplicated for seamless infinite looping animation) -->
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="cpu" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Microelectronics Systems</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="hard-drive" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Microprocessors</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="circuit-board" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">AC/DC Circuit Analysis</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="activity" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">NI Multisim</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="layers" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Tinkercad Circuits</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="wrench" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">LTspice</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="layout" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Proteus Design Suite</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="code" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">C++</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="terminal" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Python</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="globe" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">HTML</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="file-code" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Java</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Design for Testability (DFT)</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="file-spreadsheet" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Microsoft Office Suite</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="cloud" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Google Workspace</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="palette" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Canva</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="users" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Leadership & Teamwork</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="lightbulb" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Creative Problem-Solving</span>
+                </div>
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl border border-slate-200/70 dark:border-slate-800/70 glass shadow-sm">
+                    <i data-lucide="clock" class="w-4 h-4 text-royal"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase text-slate-700 dark:text-slate-200">Time Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="section-block py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">About Me</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Discover my background, engineering passion, and career aspirations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-6 space-y-4 text-slate-600 dark:text-slate-300">
+                    <h3 class="text-2xl font-bold text-navy dark:text-white mb-4">Engineering Passion & Objective</h3>
+                    <p class="leading-relaxed">
+                        I am an Electrical and Electronic Engineering undergraduate at American International University-Bangladesh (AIUB) with a strong academic foundation and hands-on experience in microelectronics, integrated circuit design, and automated test simulation.
+                    </p>
+                    <p class="leading-relaxed">
+                        My goal is to leverage my comprehensive technical expertise in AC/DC circuit analysis, hardware prototyping, and circuit simulation tools as an EEE Research or Test Engineer.
+                    </p>
+                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+                        <h4 class="font-semibold text-navy dark:text-white mb-2">Personal Interests:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full text-xs glass border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Automotive & Motorsports</span>
+                            <span class="px-3 py-1 rounded-full text-xs glass border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Sports & Athletics</span>
+                            <span class="px-3 py-1 rounded-full text-xs glass border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Creative Arts & Sketching</span>
+                            <span class="px-3 py-1 rounded-full text-xs glass border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Science & Technology</span>
+                            <span class="px-3 py-1 rounded-full text-xs glass border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Cinema & Traveling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-6 rounded-2xl glass border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:border-royal transition-all">
+                        <i data-lucide="cpu" class="w-8 h-8 text-royal mb-3"></i>
+                        <h4 class="text-lg font-bold text-navy dark:text-white mb-1">Microelectronics</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Hands-on experience in microelectronics systems and embedded circuit exploration.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:border-royal transition-all">
+                        <i data-lucide="activity" class="w-8 h-8 text-royal mb-3"></i>
+                        <h4 class="text-lg font-bold text-navy dark:text-white mb-1">Circuit Simulation</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Proficient with NI Multisim, Tinkercad Circuits, LTspice, and Proteus Design Suite.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:border-royal transition-all">
+                        <i data-lucide="wrench" class="w-8 h-8 text-royal mb-3"></i>
+                        <h4 class="text-lg font-bold text-navy dark:text-white mb-1">Hardware Prototyping</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Fabrication of fundamental power management prototypes and automation circuits.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:border-royal transition-all">
+                        <i data-lucide="users" class="w-8 h-8 text-royal mb-3"></i>
+                        <h4 class="text-lg font-bold text-navy dark:text-white mb-1">Professional Competencies</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Strong communication, team collaboration, creative problem-solving, and time management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section-block py-20 border-t border-slate-200/60 dark:border-slate-800/60 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Education Timeline</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Academic background and qualifications.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative border-l-2 border-royal/30 pl-6 sm:pl-8 space-y-12">
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-4 h-4 rounded-full bg-royal border-4 border-white dark:border-navy"></div>
+                    <div class="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 glass shadow-sm">
+                        <span class="text-xs font-semibold text-royal uppercase tracking-wider">Undergraduate Degree • 2025 – Present</span>
+                        <h3 class="text-xl font-bold text-navy dark:text-white mt-1">B.Sc. in Electrical and Electronic Engineering</h3>
+                        <p class="text-sm font-medium text-slate-600 dark:text-slate-300">American International University-Bangladesh (AIUB)</p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-white dark:border-navy"></div>
+                    <div class="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 glass shadow-sm">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Higher Secondary Certificate (HSC) • Passed 2024</span>
+                        <h3 class="text-lg font-bold text-navy dark:text-white mt-1">Science Group</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Dhaka Imperial College, Dhaka, Bangladesh</p>
+                        <p class="mt-2 text-xs font-semibold text-royal">GPA: 4.92 / 5.00</p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-white dark:border-navy"></div>
+                    <div class="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 glass shadow-sm">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Secondary School Certificate (SSC) • Passed 2022</span>
+                        <h3 class="text-lg font-bold text-navy dark:text-white mt-1">Science Group</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Sadasadi M L High School, Araihazar, Narayanganj</p>
+                        <p class="mt-2 text-xs font-semibold text-royal">GPA: 5.00 / 5.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section-block py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Technical Skills</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Categorized expertise extracted directly from CV.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="circuit-board" class="text-royal"></i>
+                        <h3 class="font-bold text-lg text-navy dark:text-white">Hardware & Automation</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Microelectronics Systems</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Microprocessors</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">AC/DC Circuit Analysis</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Circuit Simulation</span>
+                    </div>
+                </div>
+
+                <div class="p-6 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="activity" class="text-royal"></i>
+                        <h3 class="font-bold text-lg text-navy dark:text-white">Simulation Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">NI Multisim</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Tinkercad Circuits</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">LTspice</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Proteus Design Suite</span>
+                    </div>
+                </div>
+
+                <div class="p-6 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="code" class="text-royal"></i>
+                        <h3 class="font-bold text-lg text-navy dark:text-white">Programming & Scripting</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">C++</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Python</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">HTML</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Java</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Design for Testability (DFT)</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Structured Program Analysis</span>
+                    </div>
+                </div>
+
+                <div class="p-6 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="layout" class="text-royal"></i>
+                        <h3 class="font-bold text-lg text-navy dark:text-white">Office & Productivity</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Microsoft Office Suite</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Google Workspace</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Canva</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Leadership & Teamwork</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Creative Problem-Solving</span>
+                        <span class="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 rounded-xl text-xs font-semibold">Time Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section-block py-20 border-t border-slate-200/60 dark:border-slate-800/60 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Professional Experience</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Professional activities, workshops, projects, and memberships.</p>
+            </div>
+
+            <div class="space-y-8 max-w-4xl mx-auto">
+                <!-- Inter-School Science Project Champion -->
+                <div class="p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm hover:border-royal transition-all">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white">Inter-School Science Project Champion</h3>
+                            <p class="text-royal font-medium text-sm">Inter-School Science Project Competition</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-xs font-semibold w-fit">2021</span>
+                    </div>
+                    <div class="mb-4 rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 max-h-64 flex items-center justify-center bg-slate-900">
+                        <img src="https://lh3.googleusercontent.com/d/1dm47pZR4qw_CkAzc-wRu2tajdYxO9FwH=s1000" alt="Fuel Management System Project" class="w-full h-full object-cover">
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300 mb-6">
+                        <li>Conceptualized and engineered an innovative fuel management system utilizing advanced integrated circuit (IC) integration during secondary school.</li>
+                        <li>Secured 1st position among competing institutions across the institutions by demonstrating efficient fuel monitoring, automated regulation logic, and robust hardware implementation.</li>
+                    </ul>
+                    <button onclick="openModal('projectModal1')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-royal hover:text-white text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> View Details in Website
+                    </button>
+                </div>
+
+                <!-- Hardware Innovation Initiative -->
+                <div class="p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm hover:border-royal transition-all">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white">Hardware Innovation Initiative</h3>
+                            <p class="text-royal font-medium text-sm">Independent Project</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-xs font-semibold w-fit">2025 – Present</span>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300 mb-6">
+                        <li>Channeling a strong passion for automotive engineering, conceptualized and designed detailed car body structures and physical scale models.</li>
+                        <li>Integrated aerodynamic principles and structural integrity concepts into hand-sketched blueprints and mechanical layouts to bridge aesthetic design with practical engineering feasibility.</li>
+                    </ul>
+                    <button onclick="openModal('projectModal2')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-royal hover:text-white text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> View Details in Website
+                    </button>
+                </div>
+
+                <!-- DC Actuator System Project -->
+                <div class="p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm hover:border-royal transition-all">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white">DC Actuator System Project</h3>
+                            <p class="text-royal font-medium text-sm">Precision Motion & Automation Control</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-xs font-semibold w-fit">2024 – Present</span>
+                    </div>
+                    <div class="mb-4 rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 max-h-64 flex items-center justify-center bg-slate-900">
+                        <img src="https://lh3.googleusercontent.com/d/1s1Hzp60kWrgUAVKo9GYNGKMp8hAGMVRy=s1000" alt="DC Actuator System Project" class="w-full h-full object-cover">
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300 mb-6">
+                        <li>Designed and developed an advanced DC Actuator System aimed at providing precise linear positioning, high mechanical load capacity, and responsive speed regulation.</li>
+                        <li>Integrated closed-loop feedback controllers, H-bridge motor driver circuits, and limit-switch protection mechanisms to ensure safe and accurate stroke actuation under dynamic electrical loads.</li>
+                    </ul>
+                    <button onclick="openModal('projectModal4')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-royal hover:text-white text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> View Details in Website
+                    </button>
+                </div>
+
+                <!-- Research & Fabrication -->
+                <div class="p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm hover:border-royal transition-all">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white">Research & Fabrication</h3>
+                            <p class="text-royal font-medium text-sm">Independent Research & Integrated Circuit Project Developer</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-xs font-semibold w-fit">2022 – 2024</span>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300 mb-6">
+                        <li>Designed and fabricated hardware prototypes featuring integrated circuits (ICs) to advance practical understanding of embedded systems and microelectronics.</li>
+                        <li>Conducted independent literature reviews of scholarly research papers to optimize hardware logic design, signal processing accuracy, and circuit fault tolerance.</li>
+                    </ul>
+                    <button onclick="openModal('projectModal3')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-royal hover:text-white text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> View Details in Website
+                    </button>
+                </div>
+
+                <!-- AIUB IEEE Student Branch -->
+                <div class="p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm hover:border-royal transition-all">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white">Active Member & Technical Workshop Participant</h3>
+                            <p class="text-royal font-medium text-sm">AIUB IEEE Student Branch</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-100/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 text-xs font-semibold w-fit">2025 – Present</span>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                        <li>Actively attended specialized technical workshops and professional training sessions focused on power plant operations, high-voltage systems, and modern electrical grid infrastructure organized by IEEE.</li>
+                        <li>Collaborated with peers on engineering seminars and interactive professional development initiatives to strengthen industry competencies.</li>
+                    </ul>
+                </div>
+
+                <!-- Foundation-Level EEE Prototype Initiatives -->
+                <div class="p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm hover:border-royal transition-all">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white">Foundation-Level EEE Prototype Initiatives</h3>
+                            <p class="text-royal font-medium text-sm">Independent Engineering Project Developer</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                        <li>Conceptualized and successfully assembled multiple practical DC and AC circuit applications during secondary and intermediate classes.</li>
+                        <li>Validated core electrical theories through hands-on fabrication of fundamental power management prototypes and basic automation circuits.</li>
+                    </ul>
+                </div>
+
+                <!-- Web Design -->
+                <div class="p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl glass shadow-sm hover:border-royal transition-all">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white">Web Design</h3>
+                            <p class="text-royal font-medium text-sm">Web Development Project Developer / HTML Frontend Initiatives</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                        <li>Designed, structured, and successfully deployed two functional websites utilizing core HTML programming languages to expand multidisciplinary technical capabilities.</li>
+                        <li>Applied clean markup conventions and responsive structural elements to present technical projects and personal portfolios effectively.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section-block py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Projects & Portfolio</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Detailed engineering and design projects from Spandan's portfolio.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="border border-slate-200/80 dark:border-slate-800/80 rounded-2xl overflow-hidden glass shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center border-b border-slate-200/80 dark:border-slate-800/80">
+                        <img src="https://lh3.googleusercontent.com/d/1dm47pZR4qw_CkAzc-wRu2tajdYxO9FwH=s1000" alt="Fuel Management System" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white mb-2">Inter-School Science Project Champion</h3>
+                            <p class="text-xs text-royal font-medium mb-3"><strong>Achievement:</strong> 1st Position (2021)</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">
+                                Conceptualized and engineered an innovative fuel management system utilizing advanced integrated circuit (IC) integration, securing 1st position with efficient fuel monitoring, automated regulation logic, and robust hardware implementation.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">IC Integration</span>
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">Fuel Management</span>
+                            </div>
+                            <button onclick="openModal('projectModal1')" class="w-full py-2.5 bg-royal hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-sm flex items-center justify-center gap-1.5">
+                                <i data-lucide="info" class="w-4 h-4"></i> View Details Bar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="border border-slate-200/80 dark:border-slate-800/80 rounded-2xl overflow-hidden glass shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center border-b border-slate-200/80 dark:border-slate-800/80">
+                        <img src="https://lh3.googleusercontent.com/d/1s1Hzp60kWrgUAVKo9GYNGKMp8hAGMVRy=s1000" alt="DC Actuator System" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white mb-2">DC Actuator System Project</h3>
+                            <p class="text-xs text-royal font-medium mb-3"><strong>Focus:</strong> Precision Motion & Automation Control</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">
+                                Designed and developed an advanced DC Actuator System aimed at providing precise linear positioning, high mechanical load capacity, and responsive speed regulation with closed-loop feedback controllers.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">DC Actuator</span>
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">Motion Control</span>
+                            </div>
+                            <button onclick="openModal('projectModal4')" class="w-full py-2.5 bg-royal hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-sm flex items-center justify-center gap-1.5">
+                                <i data-lucide="info" class="w-4 h-4"></i> View Details Bar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="border border-slate-200/80 dark:border-slate-800/80 rounded-2xl overflow-hidden glass shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center border-b border-slate-200/80 dark:border-slate-800/80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/40 via-blue-900/40 to-slate-900/80 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                            <i data-lucide="car" class="w-32 h-32 text-indigo-400"></i>
+                        </div>
+                        <div class="relative z-20 text-center p-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-[10px] font-extrabold uppercase tracking-widest">Aerodynamics & Blueprints</span>
+                            <p class="text-white font-bold text-sm mt-2">Automotive Body Modeling</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white mb-2">Automotive Design & Modeling Initiative</h3>
+                            <p class="text-xs text-royal font-medium mb-3"><strong>Role:</strong> Car Body & Structural Concept Developer</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">
+                                Conceptualized and designed detailed car body structures and physical scale models integrating aerodynamic principles and structural integrity into hand-sketched blueprints and mechanical layouts.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">Aerodynamics</span>
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">Structural Modeling</span>
+                            </div>
+                            <button onclick="openModal('projectModal2')" class="w-full py-2.5 bg-royal hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-sm flex items-center justify-center gap-1.5">
+                                <i data-lucide="info" class="w-4 h-4"></i> View Details Bar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="border border-slate-200/80 dark:border-slate-800/80 rounded-2xl overflow-hidden glass shadow-sm hover:shadow-md transition-all flex flex-col">
+                    <div class="h-48 bg-slate-900 relative overflow-hidden flex items-center justify-center border-b border-slate-200/80 dark:border-slate-800/80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-blue-900/40 to-slate-900/80 z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                            <i data-lucide="circuit-board" class="w-32 h-32 text-purple-400"></i>
+                        </div>
+                        <div class="relative z-20 text-center p-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 text-[10px] font-extrabold uppercase tracking-widest">Embedded Systems & Prototyping</span>
+                            <p class="text-white font-bold text-sm mt-2">Hardware Circuit Research</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy dark:text-white mb-2">Independent Research & Integrated Circuit Project</h3>
+                            <p class="text-xs text-royal font-medium mb-3"><strong>Focus:</strong> Embedded Systems & Microelectronics</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-3">
+                                Designed and fabricated hardware prototypes featuring integrated circuits (ICs) and conducted independent literature reviews to optimize hardware logic design and signal processing accuracy.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">Embedded Systems</span>
+                                <span class="px-2 py-0.5 bg-royal/10 text-royal text-xs font-semibold rounded">Hardware Prototyping</span>
+                            </div>
+                            <button onclick="openModal('projectModal3')" class="w-full py-2.5 bg-royal hover:bg-blue-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-sm flex items-center justify-center gap-1.5">
+                                <i data-lucide="info" class="w-4 h-4"></i> View Details Bar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+    <section id="certifications" class="section-block py-20 border-t border-slate-200/60 dark:border-slate-800/60 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Awards and Memberships</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Professional recognitions and club affiliations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 glass shadow-sm flex items-start gap-4">
+                    <i data-lucide="award" class="w-8 h-8 text-royal shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-navy dark:text-white">Champion</h4>
+                        <p class="text-xs text-slate-500">Inter-School Science Project Competition (2021)</p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 glass shadow-sm flex items-start gap-4">
+                    <i data-lucide="users" class="w-8 h-8 text-royal shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-navy dark:text-white">Member</h4>
+                        <p class="text-xs text-slate-500">IEEE Student Branch</p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 glass shadow-sm flex items-start gap-4">
+                    <i data-lucide="book-open" class="w-8 h-8 text-royal shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-navy dark:text-white">Member</h4>
+                        <p class="text-xs text-slate-500">AIUB Research Club</p>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 glass shadow-sm flex items-start gap-4">
+                    <i data-lucide="wrench" class="w-8 h-8 text-royal shrink-0"></i>
+                    <div>
+                        <h4 class="font-bold text-navy dark:text-white">Participant</h4>
+                        <p class="text-xs text-slate-500">AIUB Machine Lab and Engineering Workshop</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRODUCTION VIDEO -->
+    <section id="video" class="section-block py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Introduction Video</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">A brief introduction explaining my engineering background and goals.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto border border-slate-200/80 dark:border-slate-800/80 p-4 rounded-2xl glass shadow-lg">
+                <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
+                    <iframe src="https://drive.google.com/file/d/1BfQCqa8_03hwL7WwZodKC8eVAfdNUZSB/preview" class="w-full h-full border-0" allow="autoplay" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUME SECTION -->
+    <section id="resume" class="section-block py-20 border-t border-slate-200/60 dark:border-slate-800/60 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Curriculum Vitae</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Preview or download my official resume.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto border border-slate-200/80 dark:border-slate-800/80 p-8 rounded-2xl text-center space-y-6 glass shadow-sm">
+                <i data-lucide="file-text" class="w-16 h-16 text-royal mx-auto"></i>
+                <div>
+                    <h3 class="text-xl font-bold text-navy dark:text-white">Spandan Podder - Official CV</h3>
+                    <p class="text-xs text-slate-500 mt-1">PDF Format • Updated 2026</p>
+                </div>
+                <a href="https://drive.google.com/file/d/1aceQvPcj8T8SFpeljDbvK-FXeTsQlsKV/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3 bg-royal hover:bg-blue-700 text-white font-medium rounded-xl transition-all shadow-md">
+                    <i data-lucide="download" class="w-4 h-4"></i> Preview & Download CV (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-block py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-navy dark:text-white">Get In Touch</h2>
+                <div class="w-12 h-1 bg-royal mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">Feel free to reach out for positions or inquiries. Connect via social links or send a message directly.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy dark:text-white">Email</h4>
+                            <a href="mailto:spandanpodder555@gmail.com" class="text-sm text-slate-600 dark:text-slate-400 hover:text-royal">spandanpodder555@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                            <i data-lucide="phone" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy dark:text-white">Phone</h4>
+                            <a href="tel:+8801618893450" class="text-sm text-slate-600 dark:text-slate-400 hover:text-royal">+880 1618-893450</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy dark:text-white">Location</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">Kuratoli, Kuril, Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+
+                    <!-- SOCIAL MEDIA CARDS WITH "TAP HERE" BAR -->
+                    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-4">
+                        <h4 class="font-bold text-navy dark:text-white text-sm uppercase tracking-wider">Connect on Socials</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/+8801618893450" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2 bg-emerald-500/10 text-emerald-500 rounded-lg group-hover:scale-110 transition-transform">
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-xs font-bold text-slate-700 dark:text-slate-200">WhatsApp</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg bg-royal/10 text-royal text-[10px] font-bold tracking-wide group-hover:bg-royal group-hover:text-white transition-colors">Tap Here</span>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com/ltspandanpodder755-spk" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2 bg-slate-500/10 text-slate-700 dark:text-slate-300 rounded-lg group-hover:scale-110 transition-transform">
+                                        <i data-lucide="github" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-xs font-bold text-slate-700 dark:text-slate-200">GitHub</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg bg-royal/10 text-royal text-[10px] font-bold tracking-wide group-hover:bg-royal group-hover:text-white transition-colors">Tap Here</span>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/share/17wwujHXaW/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2 bg-blue-500/10 text-blue-500 rounded-lg group-hover:scale-110 transition-transform">
+                                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-xs font-bold text-slate-700 dark:text-slate-200">Facebook</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg bg-royal/10 text-royal text-[10px] font-bold tracking-wide group-hover:bg-royal group-hover:text-white transition-colors">Tap Here</span>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/spandan.podder17?igsh=MWhsdzR3YWxnb2hwdQ==" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <div class="p-2 bg-pink-500/10 text-pink-500 rounded-lg group-hover:scale-110 transition-transform">
+                                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-xs font-bold text-slate-700 dark:text-slate-200">Instagram</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg bg-royal/10 text-royal text-[10px] font-bold tracking-wide group-hover:bg-royal group-hover:text-white transition-colors">Tap Here</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 border border-slate-200/80 dark:border-slate-800/80 p-8 rounded-2xl glass shadow-sm">
+                    <form id="contact-form" class="space-y-4" onsubmit="openGmail(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Your Name</label>
+                                <input type="text" name="name" id="name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 focus:outline-none focus:border-royal text-sm" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Your Email</label>
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 focus:outline-none focus:border-royal text-sm" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Subject</label>
+                            <input type="text" name="subject" id="subject" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 focus:outline-none focus:border-royal text-sm" placeholder="Job Opportunity / Inquiry">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Message</label>
+                            <textarea rows="4" name="message" id="message" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 focus:outline-none focus:border-royal text-sm" placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="w-full py-3 bg-royal hover:bg-blue-700 text-white font-medium rounded-xl transition-all shadow-md shadow-royal/20 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i> Send Message via Gmail
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy text-slate-400 py-12 border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="text-white font-bold text-base">Spandan Podder</p>
+                <p class="text-xs text-slate-500">© 2026 Spandan Podder. All rights reserved.</p>
+            </div>
+            <div class="flex items-center gap-6 text-xs">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <a href="#home" class="p-2 rounded-xl bg-slate-800 hover:bg-royal text-white transition-colors" aria-label="Back to top">
+                <i data-lucide="arrow-up" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- POP-UP MODALS SYSTEM (UPDATED QUICK CONTACT SECTION BAR) -->
+    <div id="hireModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="glass border border-slate-200 dark:border-slate-700 max-w-xl w-full p-6 sm:p-8 rounded-2xl shadow-2xl relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('hireModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                    <i data-lucide="share-2" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy dark:text-white">Quick Contact Section</h3>
+                    <p class="text-xs text-slate-500">All direct contact channels, handles, and quick inquiry options.</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Contact Methods Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a href="mailto:spandanpodder555@gmail.com" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                        <div class="p-2 bg-blue-500/10 text-blue-500 rounded-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
+                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 truncate block">spandanpodder555@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+8801618893450" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                        <div class="p-2 bg-emerald-500/10 text-emerald-500 rounded-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Phone</span>
+                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 truncate block">+880 1618-893450</span>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/+8801618893450" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                        <div class="p-2 bg-emerald-500/10 text-emerald-500 rounded-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">WhatsApp</span>
+                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 truncate block">Chat Instantly</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/ltspandanpodder755-spk" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                        <div class="p-2 bg-slate-500/10 text-slate-700 dark:text-slate-300 rounded-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">GitHub</span>
+                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 truncate block">View Repositories</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.facebook.com/share/17wwujHXaW/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                        <div class="p-2 bg-blue-500/10 text-blue-500 rounded-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Facebook</span>
+                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 truncate block">Connect on FB</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/spandan.podder17?igsh=MWhsdzR3YWxnb2hwdQ==" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 glass hover:border-royal transition-all group">
+                        <div class="p-2 bg-pink-500/10 text-pink-500 rounded-lg group-hover:scale-110 transition-transform">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Instagram</span>
+                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-200 truncate block">Follow Profile</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Quick Direct Inquiry Form inside Modal -->
+                <div class="pt-4 border-t border-slate-200 dark:border-slate-700">
+                    <h4 class="font-bold text-sm text-navy dark:text-white mb-3">Send Direct Inquiry / Schedule Interview</h4>
+                    <form id="hire-form" class="space-y-3">
+                        <div>
+                            <input type="text" name="hire_name" required placeholder="Your Name / Company Name" class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 text-xs focus:outline-none focus:border-royal">
+                        </div>
+                        <div>
+                            <input type="email" name="hire_email" required placeholder="Your Email Address" class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 text-xs focus:outline-none focus:border-royal">
+                        </div>
+                        <div>
+                            <textarea rows="2" name="hire_message" required placeholder="Write your message or role details here..." class="w-full px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/80 text-xs focus:outline-none focus:border-royal"></textarea>
+                        </div>
+                        <button type="submit" id="hire-submit-btn" class="w-full py-2.5 bg-royal hover:bg-blue-700 text-white font-medium rounded-xl text-xs transition-all shadow-md">
+                            Send Quick Inquiry Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal('hireModal')" class="px-5 py-2 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-xl hover:bg-royal hover:text-white transition-colors">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal 1 -->
+    <div id="projectModal1" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="glass border border-slate-200 dark:border-slate-700 max-w-3xl w-full p-6 sm:p-8 rounded-2xl shadow-2xl relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('projectModal1')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-navy dark:text-white">Inter-School Science Project Champion</h3>
+                    <p class="text-xs text-royal font-medium">Competition 2021 • 1st Position • Comprehensive Overview</p>
+                </div>
+            </div>
+
+            <div class="mb-6 rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 max-h-72 flex items-center justify-center bg-slate-900">
+                <img src="https://lh3.googleusercontent.com/d/1dm47pZR4qw_CkAzc-wRu2tajdYxO9FwH=s1000" alt="Fuel Management System" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p>
+                    <strong>1. Project Conception and Initial Vision:</strong> During my secondary school studies, I identified a recurring industrial and domestic issue involving fluid waste, inaccurate storage volume estimation, and potential hazard overflow risks in liquid containers. This inspired me to formulate an automated fuel management and liquid control monitoring system that could autonomously track, regulate, and report fluid levels with high precision.
+                </p>
+                <p>
+                    <strong>2. Theoretical Research and Architecture Design:</strong> Before beginning physical assembly, I conducted exhaustive theoretical studies into analog comparator circuits, transistor switching thresholds, and integrated circuit (IC) operational logic. I mapped out schematic block diagrams to ensure the control system could operate continuously under fluctuating input voltages without data drift or logic degradation.
+                </p>
+                <p>
+                    <strong>3. Component Selection and Circuit Simulation:</strong> The system architecture relied heavily on standard logic gate ICs, operational amplifiers, and specialized liquid-level sensors. I performed preliminary simulated stress-testing to evaluate power efficiency, signal noise filtering, and response time, confirming that the integrated circuitry would remain stable under diverse operational scenarios.
+                </p>
+                <p>
+                    <strong>4. Hardware Fabrication and Breadboard Prototyping:</strong> Translating theoretical schematics into a physical prototype required meticulous breadboard construction, component soldering, and PCB layout routing. I personally assembled the power supply regulation stage, signal conditioning filters, and threshold indicator arrays, ensuring clean signal pathways and robust physical durability.
+                </p>
+                <p>
+                    <strong>5. Calibration, Testing, and Troubleshooting:</strong> Initial testing revealed minor voltage fluctuations during sensor switching cycles, which I successfully mitigated by introducing decoupling capacitors and precision resistor networks. Rigorous calibration procedures ensured that liquid measurement readings correlated perfectly with actual volumetric thresholds inside the test reservoir.
+                </p>
+                <p>
+                    <strong>6. Competition Presentation and Evaluation:</strong> Exhibiting the working prototype at the regional Inter-School Science Project Competition involved demonstrating automated cutoff logic, real-time alert triggers, and error-free fluid monitoring. The panel of judges evaluated the project on technical complexity, practical utility, and ingenuity, praising its clean execution and robust hardware integration.
+                </p>
+                <p>
+                    <strong>7. Championship Triumph and Future Legacy:</strong> Ultimately, this rigorous project secured the 1st position among all participating institutions, establishing a foundational milestone in my engineering journey. It reinforced my core competencies in microelectronics and hardware automation, fueling my continued dedication toward advanced electrical engineering innovations.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeModal('projectModal1')" class="px-6 py-2.5 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-xl hover:bg-royal hover:text-white transition-colors">Close Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal 2 -->
+    <div id="projectModal2" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="glass border border-slate-200 dark:border-slate-700 max-w-3xl w-full p-6 sm:p-8 rounded-2xl shadow-2xl relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('projectModal2')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                    <i data-lucide="car" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-navy dark:text-white">Automotive Design & Modeling Initiative</h3>
+                    <p class="text-xs text-royal font-medium">Car Body & Structural Concept Developer • Comprehensive Overview</p>
+                </div>
+            </div>
+
+            <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p>
+                    <strong>1. Passion and Multidisciplinary Motivation:</strong> Driven by an innate fascination with automotive engineering, high-performance vehicle dynamics, and advanced aerodynamics, I initiated an independent design study. The primary focus was bridging aesthetic vehicle styling with rigorous mechanical engineering principles to optimize energy efficiency and high-speed stability.
+                </p>
+                <p>
+                    <strong>2. Aerodynamic Theory and Form Optimization:</strong> I deeply investigated fluid dynamics principles, boundary layer separation, and pressure drag reduction techniques. By analyzing how airflow interacts with distinct vehicle body curvatures, I formulated contour guidelines designed to minimize turbulence and aerodynamic drag across critical chassis zones.
+                </p>
+                <p>
+                    <strong>3. Technical Blueprinting and Sketching:</strong> Translating conceptual aerodynamics into actionable specifications, I produced detailed hand-sketched engineering blueprints and multi-angle mechanical layouts. These technical drawings mapped out precise proportions, wheel-base alignments, and weight distribution vectors to ensure structural balance.
+                </p>
+                <p>
+                    <strong>4. Material Selection and Structural Integrity:</strong> The initiative evaluated various lightweight composite materials and structural frameworks capable of withstanding high mechanical stress. I analyzed stress concentration points along the frame to ensure maximum passenger safety and torsional rigidity without unnecessary weight penalties.
+                </p>
+                <p>
+                    <strong>5. Physical Scale Modeling and Prototyping:</strong> Moving from two-dimensional blueprints to three-dimensional realization, I constructed physical scale models of the proposed car body structures. This hands-on fabrication phase allowed me to inspect surface curvature smoothness, symmetry, and overall aerodynamic profile accuracy in a tangible format.
+                </p>
+                <p>
+                    <strong>6. Iterative Design Refinement:</strong> Through continuous inspection and peer evaluations, I identified minor structural asymmetries and refined the body panel angles. Each iteration enhanced the visual elegance and mechanical feasibility of the design, aligning the physical model with contemporary automotive engineering standards.
+                </p>
+                <p>
+                    <strong>7. Professional Synergy with EEE Goals:</strong> This automotive design initiative significantly sharpened my spatial visualization, creative problem-solving, and structural layout capabilities. It complements my core Electrical and Electronic Engineering background by providing a holistic understanding of electromechanical integration in modern smart vehicles.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeModal('projectModal2')" class="px-6 py-2.5 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-xl hover:bg-royal hover:text-white transition-colors">Close Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal 3 -->
+    <div id="projectModal3" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="glass border border-slate-200 dark:border-slate-700 max-w-3xl w-full p-6 sm:p-8 rounded-2xl shadow-2xl relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('projectModal3')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-navy dark:text-white">Independent Research & Integrated Circuit Project</h3>
+                    <p class="text-xs text-royal font-medium">Hardware Innovation Initiative (2022 – 2024) • Comprehensive Overview</p>
+                </div>
+            </div>
+
+            <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p>
+                    <strong>1. Research Motivation and Scope:</strong> Recognizing the vital role of microelectronics in contemporary technological infrastructure, I launched an independent research and fabrication initiative. The project aimed to explore advanced integrated circuit (IC) architectures, embedded control logic, and signal processing accuracy enhancements in hardware systems.
+                </p>
+                <p>
+                    <strong>2. Scholarly Literature Review:</strong> To ground the physical fabrication in rigorous academic theory, I conducted extensive literature reviews covering semiconductor behavior, logic gate minimization techniques, and noise reduction in mixed-signal environments. This theoretical foundation informed every stage of schematic development.
+                </p>
+                <p>
+                    <strong>3. Circuit Design and Prototyping:</strong> I engineered customized circuit boards integrating multiple active and passive components. Special emphasis was placed on minimizing propagation delay, optimizing power distribution networks, and maintaining signal integrity across high-frequency switching operations.
+                </p>
+                <p>
+                    <strong>4. Testing and Fault Tolerance:</strong> Using multimeters, oscilloscopes, and simulation software, I performed comprehensive diagnostic evaluations of the fabricated prototypes. I systematically identified and resolved grounding anomalies and signal crosstalk, significantly improving overall system reliability.
+                </p>
+                <p>
+                    <strong>5. Outcome and Engineering Growth:</strong> This multi-year research initiative cemented my practical grasp of hardware design methodologies, preparing me for advanced coursework and professional challenges in electronic engineering research.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeModal('projectModal3')" class="px-6 py-2.5 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-xl hover:bg-royal hover:text-white transition-colors">Close Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal 4 -->
+    <div id="projectModal4" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="glass border border-slate-200 dark:border-slate-700 max-w-3xl w-full p-6 sm:p-8 rounded-2xl shadow-2xl relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('projectModal4')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-3 bg-royal/10 text-royal rounded-xl">
+                    <i data-lucide="activity" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-navy dark:text-white">DC Actuator System Project</h3>
+                    <p class="text-xs text-royal font-medium">Precision Motion & Automation Control • Comprehensive Overview</p>
+                </div>
+            </div>
+
+            <div class="mb-6 rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800/80 max-h-72 flex items-center justify-center bg-slate-900">
+                <img src="https://lh3.googleusercontent.com/d/1s1Hzp60kWrgUAVKo9GYNGKMp8hAGMVRy=s1000" alt="DC Actuator System" class="w-full h-full object-cover">
+            </div>
+
+            <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p>
+                    <strong>1. Project Overview & Objective:</strong> Designed and developed an advanced DC Actuator System to achieve precise linear positioning, high mechanical load capacity, and responsive speed regulation for automated applications.
+                </p>
+                <p>
+                    <strong>2. System Integration & Circuit Design:</strong> Integrated closed-loop feedback controllers, H-bridge motor driver circuits, and limit-switch protection mechanisms to ensure safe and accurate stroke actuation under dynamic electrical loads.
+                </p>
+                <p>
+                    <strong>3. Performance & Practical Impact:</strong> The system successfully demonstrates reliable motion control and precise positioning capabilities, highlighting practical skills in electromechanical systems design.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeModal('projectModal4')" class="px-6 py-2.5 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-xl hover:bg-royal hover:text-white transition-colors">Close Details</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal Control Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside content
+        window.addEventListener('click', (e) => {
+            ['hireModal', 'projectModal1', 'projectModal2', 'projectModal3', 'projectModal4'].forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (e.target === modal) {
+                    closeModal(modalId);
+                }
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // AI Smile Bar Toggle
+        let aiSmileOpen = false;
+        function toggleAiSmileBar() {
+            const bar = document.getElementById('ai-smile-bar');
+            const content = document.getElementById('ai-smile-content');
+            aiSmileOpen = !aiSmileOpen;
+            if (aiSmileOpen) {
+                bar.style.maxWidth = '300px';
+                content.style.maxWidth = '250px';
+                content.style.opacity = '1';
+            } else {
+                bar.style.maxWidth = '60px';
+                content.style.maxWidth = '0px';
+                content.style.opacity = '0';
+            }
+        }
+
+        // Contact Form to Gmail Handler
+        function openGmail(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value || 'Portfolio Inquiry';
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:spandanpodder555@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Quick Inquiry Form inside Modal Handler
+        document.getElementById('hire-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.querySelector('[name="hire_name"]').value;
+            const email = this.querySelector('[name="hire_email"]').value;
+            const message = this.querySelector('[name="hire_message"]').value;
+
+            const mailtoLink = `mailto:spandanpodder555@gmail.com?subject=${encodeURIComponent('Quick Inquiry / Interview from ' + name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+        });
+
+        // Cosmic FX Toggle
+        const cosmicToggle = document.getElementById('cosmic-toggle');
+        const toggleLabel = document.getElementById('toggle-label');
+        let cosmicOn = true;
+
+        cosmicToggle.addEventListener('click', () => {
+            cosmicOn = !cosmicOn;
+            if (cosmicOn) {
+                document.body.classList.add('cosmic-bg');
+                toggleLabel.textContent = 'Cosmic FX: On';
+            } else {
+                document.body.classList.remove('cosmic-bg');
+                toggleLabel.textContent = 'Cosmic FX: Off';
+            }
+        });
+
+        // Sidebar Navigation Buttons
+        const sections = document.querySelectorAll('section');
+        const sidebarUp = document.getElementById('sidebar-up');
+        const sidebarDown = document.getElementById('sidebar-down');
+        const gotoTopBtn = document.getElementById('goto-top-btn');
+        const gotoBottomBtn = document.getElementById('goto-bottom-btn');
+
+        function getCurrentSectionIndex() {
+            let index = 0;
+            let minDistance = Infinity;
+            sections.forEach((sec, i) => {
+                const rect = sec.getBoundingClientRect();
+                const distance = Math.abs(rect.top);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    index = i;
+                }
+            });
+            return index;
+        }
+
+        sidebarDown.addEventListener('click', () => {
+            const currentIndex = getCurrentSectionIndex();
+            if (currentIndex < sections.length - 1) {
+                sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        sidebarUp.addEventListener('click', () => {
+            const currentIndex = getCurrentSectionIndex();
+            if (currentIndex > 0) {
+                sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        gotoTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        gotoBottomBtn.addEventListener('click', () => {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
